@@ -1,0 +1,43 @@
+\section{Theory}
+\label{sec:theory}
+
+\subsection{The Cram\'{e}r-Rao lower bound (CRLB)} 
+For a purely mono-exponential distribution the probability density function ($f$) of photon arrival times is given by, 
+
+\begin{eqnarray}
+f(t|\Theta,\tau_d)=\begin{cases} \frac{1}{\tau_d}\exp{\frac{-t+\Theta}{\tau_d}}
+&\qquad\mbox{if } t \geq\Theta \\
+0 &\qquad \mbox{if } t < \Theta \end{cases}
+\label{eqn:monoexp}
+\end{eqnarray}
+where $\tau_d$ is the decay time and $\Theta$ is the conversion time. With inclusion of the scaling factor $4\sqrt{ln2}$ the coincidence time resolution (CTR) is defined as
+\begin{eqnarray}
+CTR \geq 4\sqrt{ln2}\frac{\tau_d}{\sqrt{\operatorname{N}}}
+\label{eqn:monoLB}
+\end{eqnarray}
+where $\operatorname{N}$ is the total number of photoelectrons detected. The closed form solution of equation \ref{eqn:monoLB} is calculated using the Cram\'{e}r-Rao lower bound \cite{degroot2011probability}. 
+%%
+
+The probability density function $p_\text{scint}(t|\tau_i)$ describing the scintillation process is
+described as a sum of exponential decay terms\cite{birks1964theory}. For L(Y)SO a dual exponential distribution, $p_\text{scint}(t|\Theta,\tau_r,\tau_d)$, can be used. This is given by
+\begin{equation}
+p_\text{scint}(t|\Theta,\tau_r,\tau_d) = \frac{\tau_d}{\tau_d-\tau_r}\Big[e^{\frac{-(t-\Theta)}{\tau_d}}-e^{\frac{-(t-\Theta)}{\tau_r}}\Big]
+\label{eqn:dual}
+\end{equation}
+where $\tau_r$ is the rise time, $\tau_d$ is the decay time and $\Theta$ is the particle conversion time within the scintillator crystal. The standard deviation in measurements of $\Theta$, termed $\sigma_\Theta$ is the time resolution we wish to improve. This model assumes negligible delay between gamma ray photon absorption via the photoelectric effect and the earliest potential emission of a photon. In this work we taken both the rise and decay times as known such that
+\begin{equation}
+p_\text{scint}(t|\Theta,\tau_r,\tau_d) = p_\text{scint}(t|\Theta)
+\end{equation}
+In figure \ref{fig:LSO-pdf} the probability function $p$ (PDF) and the cumulative density function $P$ (CDF) are plotted. For a known PDF the CDF can be found by integration such that
+\begin{equation}
+P(t|\Theta,\tau_r,\tau_d) = \int_{-\infty}^t p(t'|\Theta,\tau_r,\tau_d)\,dt'.
+\label{eqn:cdf}
+\end{equation}
+
+
+%%
+
+For an unbiased ideal estimator of the conversion time the bias factor is chosen such that ${m^\prime(\Theta)}= 1$. 
+From equation \ref{eqn:lb} it's clear that the number of photoelectrons as well as the Fisher information describing the scintillator detector are required. 
+The Cram\'{e}r-Rao lower bound requires that each sample must be independent and identically distributed (\textit{i.i.d})\cite{degroot2011probability}. 
+No assumption about the arrival order of photoelectrons is implied in this work, thus the \textit{i.i.d} condition is violated only if coupling between contributions exists. This is assumed to not occur amongst the cases discussed in this paper, as gamma ray photon events are considered individually.
